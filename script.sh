@@ -1,6 +1,5 @@
 #!/bin/bash
 
-cd ~
 mkdir lab0
 cd lab0
 
@@ -77,6 +76,12 @@ cp trapinch8 snover0/skitty/
 
 echo -e '-- Step 3 completed! --'
 
+
+# Правки chmod для find и rm (feraligatr5, snover0, grovyle, treecko)
+chmod 750 feraligatr5
+chmod 750 snover0
+chmod 755 feraligatr5/grovyle
+chmod 644 snover0/treecko
 
 
 find . -type f -name 't*' -exec sh -c 'wc -m "$1" 2>&1' _ {} \; | sort -nr
