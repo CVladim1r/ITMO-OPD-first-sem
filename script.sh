@@ -79,31 +79,28 @@ echo -e '-- Step 3 completed! --'
 
 
 
-find lab0 -type f -name 't*' -exec sh -c 'wc -m "$1" 2>&1' _ {} \; | sort -nr
-find lab0 -name 't*' -exec ls -lu {} + 2> /tmp/errors2.log | sort -rk 6,8
-find lab0 -type f -name '*x' -exec cat {} 2>&1 \; | sort -r
+find . -type f -name 't*' -exec sh -c 'wc -m "$1" 2>&1' _ {} \; | sort -nr
+find . -name 't*' -exec ls -lu {} + 2> /tmp/errors2.log | sort -rk 6,8
+find . -type f -name '*x' -exec cat {} 2>&1 \; | sort -r
 
-grep -rl "fe" lab0 --binary-files=text 2> /tmp/errors4.log \
+grep -rl "fe" . --binary-files=text 2> /tmp/errors4.log \
     | xargs -I{} ls -l {} \
     | sort -k 2 -nr
 
 cat -n shellos2 2>&1 | grep -viE 'e$'
-find feraligatr5 -type f 2> /tmp/errors6.log | sort
-
+find ./feraligatr5 -type f 2> /tmp/errors6.log | sort
 
 echo -e '-- Step 4 completed! --'
-
 
 
 rm -f shellos2
 rm -f snover0/treecko
 
 find . -type l -name 'Copy_*' -exec rm -f {} \;
-
 rm -f feraligatr5/deino*
+rm -f feraligatr5/deinostoutland
 
-rmdir snover0 2>/dev/null
-rmdir snover0/golem 2>/dev/null
-
+rm -rf snover0
+rm -rf feraligatr5/golem
 
 echo -e '-- Step 5 completed! --'
